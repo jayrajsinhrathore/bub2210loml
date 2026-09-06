@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>22:10 — Still Us</title>
+  <meta name="description" content="A private digital love letter and personal memory journey. 22 October 2023 • 22:10">
+  <meta name="theme-color" content="#090707">
+
+  <!-- Typography: Google Fonts with system fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Film Grain SVG Overlay -->
+  <div class="film-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Ambient Floating Dust Particles Canvas -->
+  <canvas id="particles-canvas" class="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================= -->
+  <!-- 1. CINEMATIC OPENING SCREEN                               -->
+  <!-- ========================================================= -->
+  <section id="opening-screen" class="opening-screen" aria-label="Prologue">
+    <div class="opening-content">
+      <span class="opening-badge">PRIVATE</span>
+      <div class="opening-motif" aria-label="22:10">22:10</div>
+      
+      <div class="opening-lines">
+        <p class="opening-line line-1">Some stories are too important</p>
+        <p class="opening-line line-2">to simply become memories.</p>
+        <p class="opening-line line-3">This is ours.</p>
+      </div>
+
+      <button id="enter-btn" class="enter-button" type="button">
+        <span class="btn-text">ENTER OUR STORY</span>
+        <span class="btn-glow" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="opening-footer-cue">
+      <span class="dot"></span>
+      <span class="time-label">22.10.2023</span>
+    </div>
+  </section>
+
+  <!-- Main Story Container -->
+  <main id="main-story" class="main-story" tabIndex="-1">
+
+    <!-- ======================================================= -->
+    <!-- 2. HERO SECTION                                         -->
+    <!-- ======================================================= -->
+    <section id="hero-section" class="hero-section" aria-label="Introduction">
+      <div class="hero-inner">
+        <div class="hero-date-badge">
+          <span class="line-deco"></span>
+          <time datetime="2023-10-22" class="hero-date">22 October 2023</time>
+          <span class="line-deco"></span>
+        </div>
+
+        <h1 class="hero-title">The Day Our Story Became Ours</h1>
+        
+        <div class="hero-code-tag">
+          <span class="code-motif">22:10</span>
+        </div>
+
+        <div class="hero-quote-block">
+          <p class="hero-quote-lead">I don't know what the future holds.</p>
+          <p class="hero-quote-lead">But I know one thing...</p>
+          <div class="hero-quote-emphasis">
+            <p class="hero-quote-strong">I still care.</p>
+            <p class="hero-quote-strong">I still love you.</p>
+            <p class="hero-quote-hope">And somewhere in my heart,<br>I still believe beautiful things can find their way back.</p>
+          </div>
+        </div>
+
+        <a href="#memory-journey" class="scroll-indicator" aria-label="Scroll to memories">
+          <span class="scroll-label">Scroll to remember</span>
+          <div class="scroll-line-container">
+            <span class="scroll-line-animated"></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 3. MEMORY JOURNEY & DYNAMIC IMAGE STREAM                -->
+    <!-- ======================================================= -->
+    <section id="memory-journey" class="memory-journey" aria-label="Memory Journey">
+      <div class="section-chapter-header">
+        <span class="chapter-number">CHAPTER I</span>
+        <h2 class="chapter-title">The Moments We Live Inside</h2>
+        <p class="chapter-sub">Photographs don't just hold the past. They hold the feelings that still live inside me.</p>
+      </div>
+
+      <!-- Dynamic Memories Container (Populated by script.js) -->
+      <div id="memories-container" class="memories-container" role="feed" aria-label="Memories list">
+        <!-- Javascript dynamically injects cards in exact numerical order -->
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 4. DEDICATED CAFÉ DATE CHAPTER                          -->
+    <!-- ======================================================= -->
+    <section id="cafe-chapter" class="cafe-chapter" aria-label="Café Date Chapter">
+      <div class="cafe-paper-texture">
+        <div class="cafe-emblem" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </div>
+
+        <span class="chapter-badge">THE LITTLE MOMENTS</span>
+        <h2 class="cafe-title">The Little Things</h2>
+
+        <div class="cafe-prose">
+          <p class="cafe-p1">Maybe it was never about the place.</p>
+          <p class="cafe-p2">Maybe it was simply about being there with you.</p>
+        </div>
+
+        <!-- Dedicated Café Polaroid Gallery -->
+        <div class="cafe-polaroids-row" id="cafe-polaroids">
+          <!-- Populated by script.js -->
+        </div>
+
+        <p class="cafe-caption-note">"I still smile every time I remember sitting across from you."</p>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 5. ELEGANT VERTICAL TIMELINE SECTION                    -->
+    <!-- ======================================================= -->
+    <section id="timeline-section" class="timeline-section" aria-label="Relationship Timeline">
+      <div class="timeline-header">
+        <span class="chapter-badge">CHRONOLOGY</span>
+        <h2 class="section-title">The Path of Us</h2>
+        <p class="timeline-sub">Where we started, what we carry, and where hope quietly waits.</p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Dynamic vertical progress track -->
+        <div class="timeline-track" aria-hidden="true">
+          <div class="timeline-progress-bar" id="timeline-progress-bar"></div>
+        </div>
+
+        <!-- Milestone 1 -->
+        <article class="timeline-item" data-index="1">
+          <div class="timeline-marker" aria-hidden="true"><span class="marker-dot"></span></div>
+          <div class="timeline-content">
+            <time class="timeline-date">22.10.2023</time>
+            <h3 class="timeline-heading">The Beginning</h3>
+            <p class="timeline-text">When two paths crossed and our story began. The sparks across the canteen table, nervous smiles, and knowing someone very special had arrived in my world.</p>
+          </div>
+        </article>
+
+        <!-- Milestone 2 -->
+        <article class="timeline-item" data-index="2">
+          <div class="timeline-marker" aria-hidden="true"><span class="marker-dot"></span></div>
+          <div class="timeline-content">
+            <span class="timeline-date">The Wind & Roads</span>
+            <h3 class="timeline-heading">The Little Moments</h3>
+            <p class="timeline-text">Catching your reflection in the mirror on that open road, the warmth of your hands, and finding pure magic in the quietest seconds we spent together.</p>
+          </div>
+        </article>
+
+        <!-- Milestone 3 -->
+        <article class="timeline-item" data-index="3">
+          <div class="timeline-marker" aria-hidden="true"><span class="marker-dot"></span></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Evenings & Laughter</span>
+            <h3 class="timeline-heading">The Memories</h3>
+            <p class="timeline-text">Surprise bouquets on the drive, cozy café tables under amber lights, sharing dinners, and holding hands with a gentle certainty.</p>
+          </div>
+        </article>
+
+        <!-- Milestone 4 -->
+        <article class="timeline-item" data-index="4">
+          <div class="timeline-marker" aria-hidden="true"><span class="marker-dot"></span></div>
+          <div class="timeline-content">
+            <span class="timeline-date">The Present</span>
+            <h3 class="timeline-heading">What I Feel Today</h3>
+            <p class="timeline-text">Time hasn't erased how much you mean to me. I still love you, I still care about your happiness, and my heart still holds the exact same sincerity.</p>
+          </div>
+        </article>
+
+        <!-- Milestone 5 -->
+        <article class="timeline-item" data-index="5">
+          <div class="timeline-marker" aria-hidden="true"><span class="marker-dot"></span></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Patience & Grace</span>
+            <h3 class="timeline-heading">What I Still Hope For</h3>
+            <p class="timeline-text">I still believe that with time, honesty, and understanding, things between two people who care can find their way back to beautiful.</p>
+          </div>
+        </article>
+
+        <!-- Milestone 6 -->
+        <article class="timeline-item" data-index="6">
+          <div class="timeline-marker" aria-hidden="true"><span class="marker-dot"></span></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Forward</span>
+            <h3 class="timeline-heading">Tomorrow</h3>
+            <p class="timeline-text">No pressure, no demands. Just an open heart that chooses you, respects your space, and quietly believes in better days.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 6. EMOTIONAL TRANSITION                                 -->
+    <!-- ======================================================= -->
+    <section id="transition-section" class="transition-section" aria-label="A Moment of Honesty">
+      <div class="transition-inner">
+        <div class="transition-motif" aria-hidden="true">✦</div>
+        
+        <p class="transition-line trans-lead">Somewhere along the way,</p>
+        <p class="transition-line trans-sub">things became difficult.</p>
+        
+        <div class="transition-spacer" aria-hidden="true"></div>
+        
+        <p class="transition-line trans-mid">Maybe we both changed.<br>Maybe life became complicated.<br>Maybe we didn't always understand each other the way we wanted to.</p>
+        
+        <div class="transition-spacer" aria-hidden="true"></div>
+        
+        <p class="transition-line trans-anchor">But one thing inside me hasn't changed.</p>
+        
+        <div class="transition-statement">
+          <span class="trans-statement-text">I still love you.</span>
+        </div>
+        
+        <p class="transition-line trans-final">And I still care about you.</p>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 7. "A LETTER I NEVER FINISHED"                          -->
+    <!-- ======================================================= -->
+    <section id="letter-section" class="letter-section" aria-label="Unsent Letter">
+      <div class="letter-container">
+        <div class="letter-card" id="letter-card">
+          <header class="letter-header">
+            <div class="letter-badge-group">
+              <span class="letter-stamp">PRIVATE</span>
+              <span class="letter-code-tag">2210</span>
+            </div>
+            <h2 class="letter-title">A Letter I Never Finished</h2>
+            <div class="letter-wax-seal" aria-hidden="true">2210</div>
+          </header>
+
+          <div class="letter-body">
+            <p class="letter-p">I don't know where this finds you, or what you feel when you see these memories.</p>
+            
+            <p class="letter-p">I don't want this little story to make you feel like you owe me an answer, a decision, or anything at all.</p>
+            
+            <p class="letter-p">I just want to be honest with you.</p>
+            
+            <p class="letter-p letter-focal">I still love you.</p>
+            
+            <p class="letter-p">Not because I'm holding on to the past, but because what I feel for you is still real.</p>
+            
+            <p class="letter-p">I still care about how you are, how your days are going, whether you're happy, and whether you're okay.</p>
+            
+            <p class="letter-p letter-highlight">You still matter to me.</p>
+            
+            <p class="letter-p">And even though things haven't been perfect, I don't believe that every difficult chapter has to mean the end of the whole story.</p>
+            
+            <p class="letter-p letter-hope">I still believe that things can become better.</p>
+            
+            <p class="letter-p">Maybe not immediately. Maybe not exactly the way we imagine.</p>
+            
+            <p class="letter-p">But I believe that with understanding, patience, honesty, and two people who genuinely care, some things can find their way back to beautiful.</p>
+            
+            <p class="letter-p">I don't want to force you into anything.</p>
+            
+            <p class="letter-p">I don't want to rush you.</p>
+            
+            <p class="letter-p">I don't want you to feel pressured by these words.</p>
+            
+            <p class="letter-p">I simply want you to know what is in my heart.</p>
+            
+            <p class="letter-p letter-focal">I love you. I care about you.</p>
+            
+            <p class="letter-p">And I think a part of me will keep choosing you, even while I respect whatever you need.</p>
+            
+            <p class="letter-p">If someday you feel that there is still a little space for us, I would want to use that space to understand you better, to do better, and to build something healthier and happier.</p>
+            
+            <p class="letter-p">Until then, I only hope you are happy, safe, and surrounded by good things.</p>
+            
+            <p class="letter-p">And if our story still has another chapter, I hope we write it differently this time — with more understanding, more patience, more communication, and more appreciation for each other.</p>
+            
+            <p class="letter-p letter-strong-closing">I still believe in better days.</p>
+            
+            <p class="letter-p letter-strong-closing">And I still believe in us.</p>
+          </div>
+
+          <footer class="letter-footer">
+            <span class="handwritten-sign">— 22:10</span>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 8. 2210 SECRET INTERACTION SECTION                      -->
+    <!-- ======================================================= -->
+    <section id="secret-section" class="secret-section" aria-label="Secret Code">
+      <div class="secret-card">
+        <span class="secret-eyebrow">OUR PRIVATE CODE</span>
+        <h2 class="secret-prompt">Some memories have their own code.</h2>
+        <p class="secret-code-preview">2210</p>
+        <p class="secret-hint">Four digits that only we would know.</p>
+
+        <!-- 4 Elegant Input Dials -->
+        <form id="secret-code-form" class="secret-inputs" autocomplete="off" onsubmit="return false;">
+          <input type="text" inputmode="numeric" maxlength="1" class="code-box" id="digit-1" data-index="0" aria-label="Digit 1">
+          <input type="text" inputmode="numeric" maxlength="1" class="code-box" id="digit-2" data-index="1" aria-label="Digit 2">
+          <input type="text" inputmode="numeric" maxlength="1" class="code-box" id="digit-3" data-index="2" aria-label="Digit 3">
+          <input type="text" inputmode="numeric" maxlength="1" class="code-box" id="digit-4" data-index="3" aria-label="Digit 4">
+        </form>
+
+        <div id="code-feedback" class="code-feedback" aria-live="polite"></div>
+
+        <!-- Secret Revelation Drawer -->
+        <div id="secret-reveal-drawer" class="secret-drawer" aria-hidden="true">
+          <div class="secret-drawer-content">
+            <div class="drawer-code">22:10</div>
+            <p class="drawer-lead">A little number.<br>A very big memory.</p>
+            <p class="drawer-msg">And somehow, even today, it still means something to me.</p>
+            
+            <!-- Intimate Polaroid inside the secret vault -->
+            <div class="secret-polaroid">
+              <img src="21.jpeg" alt="A tender moment" class="secret-photo" loading="lazy">
+              <p class="polaroid-caption">What is felt deeply never truly fades.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 9. "WHAT I FEEL TODAY" (DEDICATED FULLSCREEN)            -->
+    <!-- ======================================================= -->
+    <section id="feel-today-section" class="feel-today-section" aria-label="What I Feel Today">
+      <div class="feel-today-inner">
+        <span class="chapter-badge">THE TRUTH IN MY HEART</span>
+        <h2 class="feel-title">What I Feel Today</h2>
+        
+        <div class="feel-lines">
+          <p class="feel-line f-1">I still love you.</p>
+          <p class="feel-line f-2">I still care about you.</p>
+          <p class="feel-line f-3">I still think about you.</p>
+          <p class="feel-line f-4">I still hope you're happy.</p>
+          
+          <div class="feel-break" aria-hidden="true"></div>
+          
+          <p class="feel-line f-5 feel-hope-line">And yes...<br>I still hope that someday,<br>things between us can become beautiful again.</p>
+          
+          <div class="feel-break" aria-hidden="true"></div>
+          
+          <p class="feel-line f-6 feel-respect-line">But I never want that hope<br>to become pressure for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 10. FINAL EMOTIONAL SECTION                             -->
+    <!-- ======================================================= -->
+    <section id="final-message-section" class="final-message-section" aria-label="Final Honest Message">
+      <div class="final-message-inner">
+        
+        <div class="final-frame-wrapper">
+          <div class="final-image-holder" id="final-image-holder">
+            <img src="23.jpeg" alt="The person beside me" class="final-large-photo" loading="lazy">
+            <div class="photo-vignette" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="final-letter-flow">
+          <p class="final-p f-step">I don't know what tomorrow looks like.</p>
+          <p class="final-p f-step">I don't know exactly what you feel anymore.</p>
+          <p class="final-p f-step">But I know what I feel.</p>
+
+          <div class="final-declaration">
+            <span class="declaration-strong">I love you.</span>
+            <span class="declaration-sub">I care about you.</span>
+            <span class="declaration-hope">And I still believe that things can get better.</span>
+          </div>
+
+          <p class="final-p f-step">I don't know when.<br>I don't know how.</p>
+
+          <p class="final-p f-step">But I know that if life ever gives us another chance to understand each other, I would want to do it with more patience, more honesty, and more love.</p>
+
+          <p class="final-p f-step">I'm not asking you to promise me anything.<br>I'm not asking you to decide anything today.</p>
+
+          <p class="final-p f-step final-warmth">I only want you to know that my feelings are real.</p>
+
+          <p class="final-p f-step final-today">I love you today.</p>
+
+          <p class="final-p f-step">And I know that I will keep loving you with the same sincerity, while always respecting your heart, your choices, and your space.</p>
+
+          <p class="final-p f-step">Whatever tomorrow brings, I hope it brings you happiness.</p>
+
+          <div class="final-promise-box">
+            <p class="final-promise-lead">And if someday that happiness has a little place for me again...</p>
+            <p class="final-promise-text">I'll be here, not to pressure you, but to listen, to understand, and to do better.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 11. ANNIVERSARY ENDING & REPLAY                         -->
+    <!-- ======================================================= -->
+    <section id="anniversary-section" class="anniversary-section" aria-label="Anniversary Remembrance">
+      <div class="anniversary-card">
+        <time datetime="2023-10-22" class="anniv-date">22 October 2023</time>
+        
+        <p class="anniv-quote">Some dates are just dates.<br>Until someone gives them a meaning.</p>
+        
+        <div class="anniv-motif">22:10</div>
+        
+        <p class="anniv-still">And this one still means something to me.</p>
+        
+        <div class="anniv-three-words">
+          <p class="word-1">I still love you.</p>
+          <p class="word-2">I still care.</p>
+          <p class="word-3">And I still believe that beautiful things can happen.</p>
+        </div>
+
+        <div class="anniv-quiet-rule">
+          <p>No pressure.</p>
+          <p>No expectations.</p>
+          <p>Just the truth in my heart.</p>
+        </div>
+        
+        <p class="anniv-signature">— 22:10</p>
+
+        <div class="final-actions">
+          <button id="replay-btn" class="replay-button" type="button">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="1 4 1 10 7 10"></polyline>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+            </svg>
+            <span>REPLAY OUR STORY</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Small respectful footer -->
+      <footer class="site-footer">
+        <p class="footer-detail">22:10 • Still Us • 22.10.2023</p>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- 12. CINEMATIC LIGHTBOX MODAL                              -->
+  <!-- ========================================================= -->
+  <dialog id="photo-lightbox" class="photo-lightbox" aria-label="Photo view">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-panel">
+      <button id="lightbox-close" class="lightbox-close-btn" aria-label="Close photo view">&times;</button>
+      <div class="lightbox-image-wrap">
+        <img id="lightbox-img" src="" alt="Memory photograph" class="lightbox-img">
+      </div>
+      <div class="lightbox-meta">
+        <span id="lightbox-number" class="lightbox-num">MEMORY</span>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+        <span class="lightbox-tag">22.10.2023</span>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Vanilla JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
